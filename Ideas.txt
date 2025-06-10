@@ -1,0 +1,6 @@
+Multiplier for swears in succession with cooldown timer
+Simulated coins ((v fun))
+Radio buttons for adding coins
+add paypal api
+log times of swears and make graphs
+halo kill multiplier (double swear, swearaminjaro)
