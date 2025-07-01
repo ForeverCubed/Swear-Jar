@@ -1,5 +1,6 @@
 import React from "react";
 import {useEffect, useState} from "react";
+import './PrettyJar.css';
 
 /*
 BUGS:
@@ -61,15 +62,29 @@ class Jar extends React.Component {
         localStorage.setItem(this.state.name+key, value)
     }
 
+    calculateJarLevel(){
+        let jarLevel = this.state.moneyCount*5;
+        return jarLevel;
+    }
+
+
+
     render() {
         return (
-            <div>
-                <h1>{this.state.name}'s Swear Jar</h1>
-                <button onClick={() => this.handleSwear()}>
-                    {this.state.name} Swear
-                </button>
-                <p>Swear Count: {this.state.swearCount}</p>
-                <p>Money Count: ${this.state.moneyCount}</p>
+            <div className="jar">
+                <div className="lid"></div>
+                <div className="outer">
+                    <div className="level" style={{height:this.calculateJarLevel()}}></div>
+
+                    <div className="jarText">
+                        <h1>{this.state.name}'s Swear Jar</h1>
+                        <button onClick={() => this.handleSwear()}>
+                            {this.state.name} Swear
+                        </button>
+                        <p>Swear Count: {this.state.swearCount}</p>
+                        <p>Money Count: ${this.state.moneyCount}</p>
+                    </div>
+                </div>
             </div>
         );
     }
